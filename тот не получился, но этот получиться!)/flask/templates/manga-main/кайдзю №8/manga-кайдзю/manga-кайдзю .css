@@ -1,0 +1,242 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #000000;
+}
+
+nav {
+    z-index: 100;
+    background-color: #ffffff;
+    color: #000000;
+    padding: 10px 0;
+}
+
+img {
+    -webkit-user-drag: none;
+    user-drag: none;
+  }
+
+.navbar-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.logo {
+    cursor: pointer;
+    font-size: 24px;
+}
+.logo:hover{
+    color:  rgb(194, 13, 13);
+    transition: 0.5s all ease-in-out;
+}
+
+.menu-toggle {
+    display: block; /* Hide menu toggle by default */
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.nav-links {
+    display: none;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin-right: 20px;
+}
+
+.nav-links li:last-child {
+    margin-right: 0;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+}
+
+#katalog {
+    border: 1px solid #000000;
+    border-radius: 4px;
+    background-color: #000000;
+    color: white;
+    cursor: pointer;
+}
+
+/* Изменение внешнего вида при наведении */
+#katalog:hover {
+    border-color: #ff6600;
+}
+
+.nav-links li a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: rgb(194, 13, 13); /* Change color on hover */
+}
+
+.main-manga-control{
+    display: flex;
+}
+.nazad, .vperyod{
+    width: 30px;
+    height: 30px;
+}
+
+.nazad{
+    position: relative;
+    right: 10px;
+}
+.vperyod{
+    position: relative;
+    left: 10px;
+}
+
+.glava-seri{
+    cursor: pointer;
+}
+
+.card-glav{
+    position: fixed;
+    width: 400px;
+    height: 94.3vh;
+    background-color:#ff6600 ;
+    display: none;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0); /* Начальный цвет прозрачности */
+    pointer-events: none; /* Позволяет кликам проходить сквозь overlay */
+    z-index: 9998; /* Помещаем overlay под .card-glav, но над всеми остальными элементами */
+}
+
+.dark-background {
+    background-color: rgba(0, 0, 0, 0.3); /* Цвет затемнения */
+}
+
+/* Основные стили для .manga-main и изображений */
+.manga-main {
+    display: flex; /* Используем flexbox для расположения изображений */
+    flex-direction: column; /* Располагаем изображения друг над другом */
+    align-items: center; /* Центрируем изображения по горизонтали */
+    margin: 0 auto; /* Центрируем блок .manga-main по горизонтали */
+    padding: 20px; /* Добавляем немного отступов */
+    max-width: 100%; /* Максимальная ширина блока */
+}
+
+.manga-main img {
+    width: 100%; /* Ширина изображения на весь экран */
+    height: auto; /* Сохраняем пропорции изображения */
+    margin-bottom: 10px; /* Добавить отступ между изображениями */
+}
+
+/* Медиазапросы для адаптации на разных устройствах */
+@media (min-width: 768px) {
+    .manga-main {
+        max-width: 80%; /* Максимальная ширина блока для больших экранов */
+    }
+
+    .manga-main img {
+        width: 100%; /* Ширина изображения на весь экран в пределах блока */
+    }
+}
+
+@media (min-width: 1024px) {
+    .manga-main {
+        max-width: 60%; /* Максимальная ширина блока для еще больших экранов */
+    }
+}
+
+
+
+
+@media screen and (max-width: 2268px) and (min-width: 1px) {
+    .menu-toggle {
+        display: flex; /* Display menu toggle for small screens */
+    }
+
+    .nav-links {
+        display: none; /* Hide nav links by default on small screens */
+        flex-direction: column;
+        position: absolute;
+        top: 50px; /* Adjust as needed */
+        left: 0;
+        width: 100%;
+        background-color: #333;
+    }
+
+    .nav-links.active {
+        display: flex; /* Display nav links when menu is active */
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+
+    }
+.nav-links li:hover{
+    align-items: center;
+    justify-content: center;
+}
+    .menu-toggle:hover {
+        cursor: pointer;
+    }
+
+    .menu-toggle.active ~ .nav-links {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+        border: 1px solid #ffffff;
+        border-top: none;
+        z-index: 1000;
+    }
+    
+    .menu-toggle.active ~ .nav-links li {
+        margin-right: 0;
+    }
+
+    .menu-toggle.active ~ .nav-links a {
+        padding: 10px 20px;
+    }
+
+    .mobile-script-text {
+        display: none;
+    }
+
+    .button{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .nazad, .vperyod{
+        display: none;
+    }
+
+    .glava-seri{
+        font-size: 20px;
+    }
+    .card-glav{
+        position: fixed;
+        width: 200px;
+        height: 94.3vh;
+        background-color:#ff6600 ;
+        display: none;
+    }
+}
