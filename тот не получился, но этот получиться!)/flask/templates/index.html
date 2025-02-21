@@ -8,12 +8,12 @@
     <link rel="icon" href="{{ url_for('static', filename='images/d7p9lv2-25c6666f-537c-44db-a362-d5c9a3b86b91.jpg') }}" type="image/jpg">
     
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='manga-main-site/swiper.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='js/manga-main-site/swiper.min.css') }}">
 
     <script src="{{ url_for('static', filename='js/main-manga/mobile-script.js') }}" defer></script>
     <script src="{{ url_for('static', filename='js/main-manga/app.js') }}" defer></script>
-    <script src="{{ url_for('static', filename='manga-main-site/swiper.min.js') }}" defer></script>
-    <script src="{{ url_for('static', filename='manga-main-site/swiper.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='js/manga-main-site/swiper.min.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='js/manga-main-site/swiper.js') }}" defer></script>
 </head>
 
 <body>
@@ -22,7 +22,7 @@
             <div class="logo">Geniusss</div>
             <div class="menu-icons">
                 <div class="search-main">
-                    <img class="search-button" src="./img-site/search.svg"  alt="">
+                    <img class="search-button" src="{{ url_for('static', filename='images/img-site/search.svg') }}" alt="">
                     <div class="search-text">Поиск</div>
                 </div>
                 <div class="menu-toggle">&#9776;</div>
@@ -45,7 +45,9 @@
                 </ul>
                 <div class="katalog-main">
                     <div id="openModalBtn" class="katalog">Каталог</div>
-                    <img class="katalog-img" src="./img-site/free-icon-arrow-right-5082848.png" alt="">
+                    <img class="katalog-img"  src="{{ url_for('static', filename='images/img-site/free-icon-arrow-right-5082848.png') }}" alt="">
+                    
+                    
                 </div>
                 <div class="avatar">
                     <button>
@@ -61,7 +63,10 @@
             </div>
         </div>
     </nav>
-    <input class="input" type="text" placeholder="Search..." />
+    <form method="POST">
+        <input class="input" type="text" name="search" placeholder="Search..." />
+        <button class="" type="submit">🔍</button>
+    </form>
 
     <div class="info-site">
         <div class="info-update">
@@ -110,7 +115,7 @@
                                         <span class="overlay"></span>
                                         <div class="swap-anim-card">
                                         <div class="card-im">
-                                            <img class="swiper-img" src="/popular-img/atack.jpg" alt="Attaka Titanoo">
+                                            <img class="swiper-img" src="{{ url_for('static', filename='images/popular-img/atack.jpg') }}" alt="Attaka Titanoo">
                                         </div>
                                     </div>
                                 </div>
@@ -131,7 +136,7 @@
                                     <div class="image-content">
                                         <span class="overlay"></span>
                                         <div class="card-im">
-                                            <img class="swiper-img" src="/popular-img/bleach.jpg">
+                                            <img class="swiper-img" src="{{ url_for('static', filename='images/popular-img/bleach.jpg') }}">
                                         </div>
                                     </div>
                                     <div class="card-con">
@@ -149,7 +154,7 @@
                                     <div class="image-content">
                                      <span class="overlay"></span>
                                      <div class="card-im">
-                                         <im class="swiper-img" src="/popular-img/boba.jpg" alt="Profile Image">
+                                         <img class="swiper-img" src="{{ url_for('static', filename='images/popular-img/boba.jpg') }}" alt="Profile Image">
                                      </div>
                                  </div>
                                  <div class="card-con">
@@ -168,7 +173,7 @@
                                     <div class="image-content">
                                         <span class="overlay"></span>
                                         <div class="card-im">
-                                            <img class="swiper-img" src="/popular-img/bers.jpg" alt="Profile Image">
+                                            <img class="swiper-img" src="{{ url_for('static', filename='images/popular-img/bers.jpg') }}"" alt="Profile Image">
                                         </div>
                                     </div>
                                     <div class="card-con">
@@ -196,7 +201,7 @@
    <div class="manga-main">
     <div class="anime-cards">
     <a class="card" href="./manga-main/bleach/bleach.html">
-        <img  class="card-image" src="./manga-main/bleach/img-bleach/Bleach-manga.png" alt="Image">
+        <img  class="card-image" src="{{ url_for('static', filename='manga-main/bleach/img-bleach/Bleach-manga.png') }}" alt="Image">
         <div class="card-content">
             <h2 class="card-title">Блич</h2>
             <div class="card-main-text-manga">
@@ -212,7 +217,7 @@
         </a>
        
         <a class="card" href="./manga-main/кайдзю №8/кайдзю №8.html">
-            <img  class="card-image" src="/manga-main/кайдзю №8/img-кайдзю/кайдзю-манга.jpg" alt="Image">
+            <img  class="card-image" src="{{ url_for('static', filename='manga-main/кайдзю №8/img-кайдзю/кайдзю-манга.jpg') }}" alt="Image">
             <div class="card-content">
                 <h2 class="card-title">Кайдзю №8</h2>
                 <div class="card-text">
@@ -230,7 +235,7 @@
 
     <div class="anime-cards">
     <a class="card" href="./manga-main/bleach/bleach.html">
-        <img  class="card-image" src="./manga-main/bleach/img-bleach/Bleach-manga.png" alt="Image">
+        <img  class="card-image" src="{{ url_for('static', filename='images/popular-img/atack.jpg') }}" alt="Image">
         <div class="card-content">
             <h2 class="card-title">Блич</h2>
             <div class="card-main-text-manga">
@@ -246,7 +251,7 @@
         </a>
        
         <a class="card" href="./manga-main/кайдзю №8/кайдзю №8.html">
-            <img  class="card-image" src="/manga-main/кайдзю №8/img-кайдзю/кайдзю-манга.jpg" alt="Image">
+            <img  class="card-image" src="{{ url_for('static', filename='images/popular-img/atack.jpg') }}" alt="Image">
             <div class="card-content">
                 <h2 class="card-title">Кайдзю №8</h2>
                 <div class="card-text">
