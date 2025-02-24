@@ -1,10 +1,39 @@
 document.querySelector(".search-main").addEventListener("click", function() {
     var inputField = document.querySelector(".input");
+    var searchTextButton = document.querySelector('.search-text-bt');
+    var searchButton = document.querySelector('.search-button'); // Иконка 🔍 внутри кнопки
+
     inputField.classList.toggle("active");
-  
-    // Toggle transform on search button for visual feedback
-    var searchButton = document.querySelector('.search-button');
-    searchButton.style.transform = inputField.classList.contains('active') ? 'rotate(45deg)' : 'rotate(0)';
+    searchTextButton.classList.toggle("active");
+
+    // Анимация поворота только для иконки 🔍
+    searchButton.style.transform = inputField.classList.contains('active') ? 'rotate(45deg)' : 'rotate(0deg)';
+    
+    // Автофокус на поле ввода
+    if (inputField.classList.contains("active")) {
+        inputField.focus();
+    }
+});
+
+// Запуск поиска при нажатии Enter
+document.querySelector(".input").addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {
+        document.querySelector(".search-text-bt").click();
+    }
+});
+
+// Запуск поиска при нажатии Enter
+document.querySelector(".input").addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {
+        document.querySelector(".search-text-bt").click();
+    }
+});
+
+// Запуск поиска при нажатии Enter
+document.querySelector(".input").addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {
+        document.querySelector(".search-text-bt").click();
+    }
 });
 
 document.querySelector(".katalog-main").addEventListener("click", function() {
@@ -69,3 +98,43 @@ document.querySelector('.text-manga-btn').addEventListener('click', function() {
         this.textContent = 'Скрыть';
     }
 });
+
+
+
+function searchLive(query) {
+    let resultsBox = document.getElementById("search-results");
+
+    if (query.trim() !== "") {
+        fetch("/", {
+            method: "POST",
+            body: new URLSearchParams({search: query}),
+            headers: {"Content-Type": "application/x-www-form-urlencoded"}
+        })
+        .then(response => response.text())
+        .then(html => {
+            let parser = new DOMParser();
+            let doc = parser.parseFromString(html, "text/html");
+            let newResults = doc.getElementById("search-results").innerHTML;
+
+            if (newResults.trim() !== "") {
+                resultsBox.innerHTML = newResults;
+                resultsBox.style.display = "block"; // Показываем, если есть результаты
+            } else {
+                resultsBox.style.display = "none"; // Если результатов нет, скрываем
+            }
+        });
+    } else {
+        resultsBox.style.display = "none"; // Скрываем, если пусто
+    }
+}
+// Скрываем список при клике вне поиска
+document.addEventListener("click", function(event) {
+    let searchBox = document.querySelector(".input");
+    let resultsBox = document.getElementById("search-results");
+
+    if (!searchBox.contains(event.target) && !resultsBox.contains(event.target)) {
+        resultsBox.style.display = "none";
+    }
+});
+
+

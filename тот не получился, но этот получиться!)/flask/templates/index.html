@@ -27,46 +27,39 @@
                 </div>
                 <div class="menu-toggle">&#9776;</div>
                 <ul class="nav-links">
-                    <li><a class="text-nav" href="#">манга</a></li>
-                    <li><a class="text-nav" href="#">смотреть аниме</a></li>
-                   <div class="reg-menu-toggle">
-                     <div class="reg-menu-toggle">
-                        <button class="button-sh">
-                            <span class="vxod">вход</span>
-                            <span class="shimmer"></span>
-                        </button>
-                        <div class="sr"></div>
-                        <button class="button-sh">
-                            <span class="vxod">регистрация</span>
-                            <span class="shimmer"></span>
-                        </button>
-                     </div>
-                   </div>
+                    <li><a class="text-nav" href="#">Манга</a></li>
+                    <li><a class="text-nav" href="#">Смотреть аниме</a></li>
                 </ul>
+
                 <div class="katalog-main">
                     <div id="openModalBtn" class="katalog">Каталог</div>
-                    <img class="katalog-img"  src="{{ url_for('static', filename='images/img-site/free-icon-arrow-right-5082848.png') }}" alt="">
-                    
-                    
+                    <img class="katalog-img" src="{{ url_for('static', filename='images/img-site/free-icon-arrow-right-5082848.png') }}" alt="">
                 </div>
-                <div class="avatar">
-                    <button>
-                        <span class="vxod">вход</span>
-                        <span class="shimmer"></span>
-                    </button>
+    
+                <!-- КНОПКИ ВНЕ СПИСКА NAV-LINKS -->
+                <div class="reg-menu-toggle">
+                    <a href="{{ url_for('login') }}" class="button-sh">
+                        <span class="vxod">Вход</span>
+                    </a>
                     <div class="sr"></div>
-                    <button>
-                        <span class="vxod">регистрация</span>
-                        <span class="shimmer"></span>
-                    </button>
-                  </div>
+                    <a href="{{ url_for('register') }}" class="button-sh">
+                        <span class="vxod">Регистрация</span>
+                    </a>
+                </div>
             </div>
         </div>
     </nav>
-    <form method="POST">
-        <input class="input" type="text" name="search" placeholder="Search..." />
-        <button class="" type="submit">🔍</button>
-    </form>
+    
+
+
+
+ <form method="POST">
+    <input class="input" type="text" name="search" placeholder="Search..." oninput="searchLive(this.value)" />
+    <button class="search-text-bt" type="submit">🔍</button>
+</form>
+
+<!-- Список результатов поиска (изначально скрыт) -->
+<ul id="search-results" style="display: none;"></ul>
 
     <div class="info-site">
         <div class="info-update">
@@ -87,7 +80,7 @@
                     <a href="" class="katalog-text">смотреть аниме</a>
                     <a href="" class="katalog-text">топ манга</a>
                     <a href="" class="katalog-text">читать мангу</a>
-                    <a href="" class="katalog-text">кайф!)</a>=gzsdkjhvjhmn<kulbsdlfFHBNMFDSMNBDDHFHJBj?olwe\p'<kQ-FW></kQ-FW>
+                    <a href="" class="katalog-text">кайф!)</a>
                     </div>
                         <div class="janr-katalog">
                             <h2 class="start-janr">Жанры</h2>
