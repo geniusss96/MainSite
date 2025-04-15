@@ -5,7 +5,7 @@ app = Flask(__name__)
 # Данные для поиска (название страницы -> URL)
 data = {
     "Атака Титанов": "/manga-main/attack-on-titan.html",
-    "Блич": "/manga-main/bleach.html",
+    "Блич": "/bleach",  # изменено на правильный путь
     "Ковбой Бибоп": "/manga-main/cowboy-bebop.html",
     "Берсерк": "/manga-main/berserk.html",
     "Кайдзю №8": "/manga-main/kaiju-8.html"
@@ -43,6 +43,14 @@ def login():
             return "Успешный вход!"
         return "Неверный логин или пароль!"
     return render_template("login.html")
+
+@app.route("/bleach")
+def bleach():
+    return render_template("bleach/bleach.html")
+
+@app.route("/kaiju8")
+def kaiju8():
+    return render_template("кайдзю №8/кайдзю №8.html")
 
 if __name__ == "__main__":
     app.run(debug=True)

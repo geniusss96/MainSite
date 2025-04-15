@@ -94,7 +94,7 @@
 
     <div class="popular">
        <div class="popular-text-main">
-        <div class="popular-text">Популярное</div>
+        <div style="color: black;" class="popular-text">Популярное</div>
     </div>
     <div class="popular-main">
             <div class="popular-card">
@@ -193,7 +193,7 @@
 
    <div class="manga-main">
     <div class="anime-cards">
-    <a class="card" href="./manga-main/bleach/bleach.html">
+    <a class="card" href="{{ url_for('bleach') }}">
         <img  class="card-image" src="{{ url_for('static', filename='manga-main/bleach/img-bleach/Bleach-manga.png') }}" alt="Image">
         <div class="card-content">
             <h2 class="card-title">Блич</h2>
@@ -209,7 +209,7 @@
             </div>
         </a>
        
-        <a class="card" href="./manga-main/кайдзю №8/кайдзю №8.html">
+        <a class="card" href="{{ url_for('kaiju8') }}">
             <img  class="card-image" src="{{ url_for('static', filename='manga-main/кайдзю №8/img-кайдзю/кайдзю-манга.jpg') }}" alt="Image">
             <div class="card-content">
                 <h2 class="card-title">Кайдзю №8</h2>

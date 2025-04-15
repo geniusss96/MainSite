@@ -5,11 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
-    <link rel="stylesheet" href="./bleach.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='manga-main/bleach/bleach.css') }}">
 
-    <script src="/mobile-script.js" defer></script>
-    <script src="/js/main-manga/app.js" defer></script>
-    <script src="/js/manga-menu.js" defer></script>
+
+
+    <script src="{{ url_for('static', filename='js/main-manga/mobile-script.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='js/main-manga/app.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='js/manga-menu.js') }}" defer></script>
 </head>
 <body>
     
@@ -19,11 +21,11 @@
         <ul class="nav-links">
             <div class="katalog-main">
                 <div id="openModalBtn" class="katalog">Каталог</div>
-                <img class="katalog-img" src="/img-site/free-icon-arrow-right-5082848.png" alt="">
+                <img class="katalog-img" src="{{ url_for('static', filename='images/img-site/free-icon-arrow-right-5082848.jpg') }}" alt="">
             </div>
 
             <div class="search-main">
-                <img class="search-button" src="/img-site/search.svg"  alt="">
+                <img class="search-button" src="{{ url_for('static', filename='images/img-site/search.svg') }}"  alt="">
                 <div class="search-text">Поиск</div>
             </div>
         </ul>
@@ -51,7 +53,7 @@
     </div>
 
 
-   <img class="welcome" src="/manga-main/bleach/img-bleach/bleach-anime-big-three-is-iconic.png" alt=""> 
+   <img class="welcome" src="{{ url_for('static', filename='manga-main/bleach/img-bleach/bleach-anime-big-three-is-iconic.png') }}" alt=""> 
 
    <div class="main-info">
     <div class="manga-main">
