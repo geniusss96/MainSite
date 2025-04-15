@@ -1,0 +1,341 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Special+Elite&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    font-family: "Montserrat", sans-serif;
+    background-color: gold;
+}
+
+img {
+    -webkit-user-drag: none;
+    user-drag: none;
+  }
+
+.navbar-container {
+    max-width: 2180px;
+    height: 50px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    background-color: black;
+}
+
+.logo {
+    cursor: pointer;
+    font-family: "Special Elite", system-ui;
+    font-weight: 400;
+    color: white;
+    font-size: 24px;
+}
+.logo:hover{
+    color:  rgb(194, 13, 13);
+    transition: 0.5s all ease-in-out;
+}
+
+.menu-toggle {
+    display: none; /* Hide menu toggle by default */
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin-right: 20px;
+}
+
+.nav-links li:last-child {
+    margin-right: 0;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+}
+
+#katalog {
+    border: 1px solid #000000;
+    border-radius: 4px;
+    background-color: #000000;
+    color: white;
+    cursor: pointer;
+}
+
+/* Изменение внешнего вида при наведении */
+#katalog:hover {
+    border-color: #ff6600;
+}
+
+.nav-links li a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: rgb(194, 13, 13); /* Change color on hover */
+}
+
+.welcome {
+    width: 100%;
+    height: 400px;
+    object-fit: cover; /* Это свойство позволяет изображению заполнить контейнер, сохраняя при этом его пропорции */
+}
+
+.main-manga {
+    width: 240px;
+    height: auto;
+    border-radius: 24px;
+    position: relative;
+    float: left; /* Добавляем свойство float для выравнивания элемента слева */
+    margin-right: 20px; /* Добавляем небольшой отступ справа для разделения элементов */
+    position: relative;
+    top: -80px;
+    left: 40px;
+
+}
+
+.read-book {
+    position: relative;
+    top: 320px;
+    right: 210px;
+    display: inline-block; /* Используем inline-block, чтобы кнопка подстраивалась под содержимое */
+    width: 225px;
+    height: 50px;
+    line-height: 50px; /* Центрируем текст вертикально */
+    background-image: linear-gradient(to left, #f1760b 0%, #ec200a 100%);
+    color: white; /* Цвет текста */
+    text-align: center; /* Центрируем текст по горизонтали */
+    text-decoration: none; /* Убираем подчеркивание по умолчанию для ссылки */
+    border-radius: 20px;
+    font-family: 'Mukta', sans-serif;
+    cursor: pointer;
+}
+
+.mobile-opisaniya{
+    display: none;
+}
+.read-book:hover{
+    background-image: linear-gradient(to top,  #f1760b 0%, #ec200a 100%);
+}
+.read-book:active {
+    background-image: linear-gradient(to top, rgb(28, 200, 238), rgb(91, 16, 222));
+  }
+
+
+.tochkaXD{
+    margin: 0 5px 0 5px;
+}
+
+  .main-opis {
+    display: block;
+    margin-left: 340px;
+    /* Дополнительные стили могут быть добавлены по вашему усмотрению */
+}
+
+.janr-mobile{
+    display: none;
+}
+.info-data {
+    display: flex;
+    /* Дополнительные стили могут быть добавлены по вашему усмотрению */
+    margin-left: -20px;
+    margin-top: -40px;
+}
+
+.opisaniya {
+    display: flex;
+    /* Дополнительные стили могут быть добавлены по вашему усмотрению */
+}
+
+.anime-name {
+    max-width: 150px;
+    /* overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis; */
+    font-size: 54px;
+    /* Дополнительные стили могут быть добавлены по вашему усмотрению */
+    margin-left: -20px;
+}
+
+.card-opisaniya {
+    display: block;
+    width: 1550px;
+    height: auto;
+    background: black;
+    order: 1; /* Помещаем этот элемент в самый конец */
+    /* Дополнительные стили могут быть добавлены по вашему усмотрению */
+    margin-left: -120px;
+    margin-top: 80px;
+}
+.opisaniya-bleach{
+    margin: 0 15px 0 15px;
+    color: gold;
+    font-size: 24px;
+}
+.welcome-opis{
+    margin-left: 5px;
+    font-size: 36px;
+    color: gold;
+}
+
+
+
+
+
+@media screen and (max-width: 768px) {
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    .welcome {
+        display: none;
+    }
+
+    .main-manga {
+        z-index: 1;
+        margin-left: -20px;
+        width: 150px; /* Ширина элемента в процентах от ширины родительского контейнера */
+        margin-top: 100px;
+        right: 10%; /* Смещение вправо на 10% от ширины родительского контейнера */
+        transform: none; /
+    }
+
+    .info-data {
+        font-size: 12px;
+        margin-left: 40px; /* Изменяем отступы */
+        margin-top: 30px;
+    }
+    .anime-name {
+        font-size: 24px;
+        margin-left: 40px; /* Изменяем отступы */
+        margin-top: 0;
+    }
+    .read-book {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 20px; /* Отступ снизу */
+    }
+    
+
+    .main-opis {
+        display: flex;
+        flex-direction: column;
+        margin-left: 0; /* Изменяем отступы */
+        margin-top: 0;
+    }
+    .card-opisaniya {
+       display: none;
+    }
+
+    .mobile-opisaniya {
+        position: absolute;
+        left: 50%;
+        top: 400px;
+        transform: translateX(-50%);
+        height: auto;
+        background-color: #000000;
+        border: 1px solid #fff;
+        border-radius: 10px;
+        color: gold;
+        padding: 10px;
+        display: flex;
+        width: 90%; /* Измените на нужное вам значение в процентах */
+        max-width: 560px; /* Максимальная ширина для контроля размеров на больших экранах */
+    }
+      
+    
+    .janr-mobile{
+        font-size: 24px;
+        margin-top: 20px;
+        border-radius: 24px;
+        padding: 10px 0 0 15px;
+        color: gold;
+        margin-left: 190px;
+        display: block;
+        width: 185px;
+        height: auto;
+        background-color: black;
+    }
+    
+}
+
+/* Media query for mobile devices */
+@media screen and (max-width: 768px) {
+    .menu-toggle {
+        display: flex; /* Display menu toggle for small screens */
+    }
+
+    .nav-links {
+        display: none; /* Hide nav links by default on small screens */
+        flex-direction: column;
+        position: absolute;
+        top: 50px; /* Adjust as needed */
+        left: 0;
+        width: 100%;
+        background-color: #333;
+        z-index: 100;
+    }
+
+    .nav-links.active {
+        display: flex; /* Display nav links when menu is active */
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .menu-toggle:hover {
+        cursor: pointer;
+    }
+
+    .menu-toggle.active ~ .nav-links {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border-top: none;
+        z-index: 1000;
+    }
+
+    .menu-toggle.active ~ .nav-links li {
+        margin-right: 0;
+    }
+
+    .menu-toggle.active ~ .nav-links a {
+        padding: 10px 20px;
+    }
+
+    .mobile-script-text {
+        display: none;
+    }
+
+    .button{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 390px) {
+    .janr-mobile{
+        font-size: 16px;
+        width: 120px;
+    }
+}
