@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request, redirect, url_for
+import json
 
 app = Flask(__name__)
 
@@ -32,7 +33,7 @@ def register():
             return "Пользователь уже существует!"
         users[username] = password
         return redirect(url_for("login"))
-    return render_template("register.html")
+    return render_template("main-account/register.html")
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
@@ -42,7 +43,7 @@ def login():
         if username in users and users[username] == password:
             return "Успешный вход!"
         return "Неверный логин или пароль!"
-    return render_template("login.html")
+    return render_template("main-account/login.html")
 
 @app.route("/bleach")
 def bleach():
@@ -52,5 +53,15 @@ def bleach():
 def kaiju8():
     return render_template("кайдзю №8/кайдзю №8.html")
 
+@app.route("/user/<username>")
+def user_profile(username):
+    if username in users:
+        return render_template("main-account/profile.html", username=username)
+    return "Пользователь не найден", 404
+
+
+
+
 if __name__ == "__main__":
     app.run(debug=True)
+

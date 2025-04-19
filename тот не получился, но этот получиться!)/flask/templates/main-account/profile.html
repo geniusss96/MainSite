@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Профиль {{ username }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="form-container">
+        <h2>👤 Профиль пользователя</h2>
+        <div class="user-card" style="margin: 0 auto;">
+            <img src="https://i.pravatar.cc/150?u={{ username }}" alt="Avatar">
+            <h3>{{ username }}</h3>
+            <p>Зарегистрирован в системе.</p>
+        </div>
+        <a href="/users">⬅ Назад к списку участников</a>
+
+    </div>
+</body>
+</html>
