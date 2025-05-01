@@ -8,16 +8,13 @@
 <body>
     <div class="form-container">
         <h2>👤 Профиль пользователя</h2>
-        <div class="user-card">
-            {% if avatar %}
-                <img src="{{ avatar }}" alt="Avatar">
-            {% else %}
-                <img src="https://i.pravatar.cc/150?u={{ username }}" alt="Default Avatar">
-            {% endif %}
+        <div class="user-card" style="margin: 0 auto;">
+            <img src="https://i.pravatar.cc/150?u={{ username }}" alt="Avatar">
             <h3>{{ username }}</h3>
             <p>Зарегистрирован в системе.</p>
         </div>
         <a href="/users">⬅ Назад к списку участников</a>
+
     </div>
 </body>
 </html>
